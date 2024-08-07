@@ -19,7 +19,22 @@ implementation 'com.github.iwtsus:VisibleSensorLayout:1.0.0'
 
 ## 使用
 ```
-```
+visibleSensorLayout.basicRectView =  //基于判断可见性范围的view，不设置即整个屏幕
+visibleSensorLayout.visibilityListener = object :VisibleSensorLayout.VisibilityListener{
+    override fun onVisibleStateChange(state: VisibleSensorLayout.State) {
+        when(state){
+            VisibleSensorLayout.State.COMPLETELY_VISIBLE->{
+                //全部可见
+            }
+            VisibleSensorLayout.State.PARTIALLY_VISIBLE->{
+                //部分可见
+            }
+            VisibleSensorLayout.State.GONE->{
+                //不可见
+            }
+        }
+    }
+}
 
 
 
